@@ -75,7 +75,7 @@ export const DATA_KO: ContentData = {
         ai: ["MediaPipe", "DTW Algorithm"]
       },
       details: [
-        "기획서, 기술 명세서, 비즈니스 로직 설계 100% 단독 수행",
+        "기획서, 기술 명세서, 비즈니스 로직 설계",
         "Spring Cloud Gateway & Config Server로 마이크로서비스 통합 관리",
         "WebSocket과 WASM을 활용한 실시간 모션 스트리밍 파이프라인",
         "Redis 캐싱 및 비동기 처리를 통한 응답 속도 최적화"
@@ -318,7 +318,7 @@ export const DATA_EN: ContentData = {
         ai: ["MediaPipe", "DTW Algorithm"]
       },
       details: [
-        "Solely authored 100% of project proposal, technical specs, and business logic design",
+        "authored of project proposal, technical specs, and business logic design",
         "Integrated microservices using Spring Cloud Gateway & Config Server",
         "Real-time motion streaming pipeline using WebSocket and WASM",
         "Optimized response speed via Redis caching and async processing"
