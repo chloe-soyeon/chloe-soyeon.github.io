@@ -36,6 +36,13 @@ jobs:
         working-directory: soyeon-kim-portfolio
         run: npm run build
 
+      # ✅ 추가: dist에 index.html이 없으면 여기서 실패하게 함
+      - name: Verify dist output
+        run: |
+          ls -la soyeon-kim-portfolio
+          ls -la soyeon-kim-portfolio/dist
+          test -f soyeon-kim-portfolio/dist/index.html
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
