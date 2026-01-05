@@ -46,29 +46,32 @@ const About: React.FC = () => {
   const { profile, education, awards, certifications, paper, ui } = content;
 
   return (
-    <section id="about" className="py-32 bg-white">
+    <section id="about" className="py-24 md:py-36 bg-white">
       <div className="max-w-6xl mx-auto px-6 lg:px-8">
         <div className="mb-16">
            <h2 className="text-sm font-bold text-pink-600 tracking-widest uppercase mb-3">{ui.about.label}</h2>
-           <h3 className="text-5xl font-bold text-gray-900 tracking-tight">{ui.about.title}</h3>
+           <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 tracking-tight">{ui.about.title}</h3>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+
           {/* Row 1 */}
           {/* 1. Philosophy Card */}
-          <CardWrapper className="md:col-span-2 p-10 bg-gray-50/80">
-            <Quote className="absolute top-8 right-8 text-pink-100" size={100} />
-            <div className="relative z-10 flex flex-col justify-center min-h-[250px]">
+          <CardWrapper className="md:col-span-2 p-8 md:p-10 bg-gray-50/80">
+            <Quote className="absolute top-8 right-8 text-pink-100 hidden md:block" size={100} />
+            <div className="relative z-10 flex flex-col justify-center min-h-[180px] md:min-h-[250px]">
               <h4 className="text-3xl font-bold text-gray-900 mb-6">{ui.about.philosophyTitle}</h4>
-              <p className="text-gray-600 leading-relaxed text-xl font-medium text-balance">
-                "{profile.summary}"
+              <p
+                className="text-gray-600 text-xl font-medium text-balance text-center md:text-left max-w-3xl"
+                style={{ wordBreak: 'keep-all', overflowWrap: 'break-word', lineHeight: '1.9' }}
+              >
+                {profile.summary}
               </p>
             </div>
           </CardWrapper>
 
           {/* 2. Education Card */}
-          <CardWrapper className="md:col-span-1 p-10 !bg-gray-900 text-white" delay={0.1}>
+          <CardWrapper className="md:col-span-1 p-8 md:p-10 !bg-gray-900 text-white" delay={0.1}>
              <div className="flex flex-col justify-between h-full">
                <div>
                  <div className="w-12 h-12 bg-gray-800 rounded-2xl flex items-center justify-center mb-8">
@@ -90,7 +93,7 @@ const About: React.FC = () => {
 
           {/* Row 2 */}
           {/* 3. Awards Card */}
-          <CardWrapper className="md:col-span-2 p-10" delay={0.2}>
+          <CardWrapper className="md:col-span-2 p-8 md:p-10" delay={0.2}>
              <div className="flex items-center gap-4 mb-6">
                 <div className="w-12 h-12 bg-gray-100 rounded-2xl flex items-center justify-center">
                   <Award className="text-gray-900" size={24} />
@@ -118,7 +121,7 @@ const About: React.FC = () => {
           </CardWrapper>
 
           {/* 4. Certifications Card */}
-          <CardWrapper className="md:col-span-1 p-8 bg-gray-50/50" delay={0.3}>
+          <CardWrapper className="md:col-span-1 p-8 md:p-8 bg-gray-50/50" delay={0.3}>
              <div className="h-full flex flex-col">
                <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-sm shrink-0">
                   <FileBadge className="text-gray-900" size={24} />
@@ -137,11 +140,11 @@ const About: React.FC = () => {
                   ))}
                </div>
              </div>
-          </CardWrapper>
+           </CardWrapper>
 
-          {/* Row 3 */}
-          {/* 5. Research Card */}
-          <CardWrapper className="md:col-span-3 p-8 !bg-gray-900 border-gray-800" delay={0.4}>
+           {/* Row 3 */}
+           {/* 5. Research Card */}
+           <CardWrapper className="md:col-span-3 p-8 md:p-8 !bg-gray-900 border-gray-800" delay={0.4}>
              <div className="flex flex-col md:flex-row items-center justify-between gap-6">
                <div className="flex items-center gap-6">
                  <div className="w-12 h-12 bg-gray-800 rounded-2xl flex items-center justify-center shadow-sm shrink-0">
@@ -160,7 +163,7 @@ const About: React.FC = () => {
                  <span>{paper.role}</span>
                </div>
              </div>
-          </CardWrapper>
+           </CardWrapper>
 
         </div>
       </div>
