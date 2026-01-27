@@ -112,7 +112,7 @@ const ProjectCard: React.FC<{ project: Project; index: number; ui: UIStrings['pr
 
             {/* 2. Description & Tech (Col 5) */}
             <div className="lg:col-span-5 flex flex-col h-full">
-               <p className="text-xl text-gray-700 leading-relaxed mb-8 font-medium text-balance">
+               <p className="text-xl text-gray-700 leading-relaxed mb-8 font-medium" style={{ wordBreak: 'keep-all', overflowWrap: 'normal', lineBreak: 'strict' }}>
                  {project.description}
                </p>
                
@@ -170,7 +170,7 @@ const Projects: React.FC = () => {
   const { projects, ui } = content;
 
   return (
-    <section id="projects" className="py-32 bg-gray-50/50 relative">
+    <section id="projects" lang="ko" className="py-32 bg-gray-50/50 relative">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         
         {/* Header */}
@@ -179,7 +179,7 @@ const Projects: React.FC = () => {
             <h2 className="text-sm font-bold text-pink-600 tracking-widest uppercase mb-3">{ui.projects.label}</h2>
             <h3 className="text-5xl font-bold text-gray-900 tracking-tight">{ui.projects.title}</h3>
           </div>
-          <p className="text-gray-500 max-w-sm text-lg md:text-right">
+          <p className="text-gray-500 max-w-sm text-lg md:text-right" style={{ wordBreak: 'keep-all', overflowWrap: 'break-word', lineBreak: 'strict' }}>
             {ui.projects.description}
           </p>
         </div>

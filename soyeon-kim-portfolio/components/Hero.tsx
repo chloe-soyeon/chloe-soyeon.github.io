@@ -57,7 +57,8 @@ const Hero: React.FC = () => {
              <h1 className="text-5xl sm:text-7xl md:text-9xl font-bold tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-gray-900 to-gray-600 drop-shadow-sm leading-tight mb-8 md:mb-10 pb-2">
               {profile.nameEng}
             </h1>
-             <div className="h-1.5 w-24 bg-pink-500 rounded-full mb-10 sm:mb-12 opacity-90"></div>
+             {/* center the pink bar regardless of parent's md:items-start by forcing self-center */}
+             <div className="h-1.5 w-24 bg-pink-500 rounded-full mb-10 sm:mb-12 opacity-90 self-center"></div>
              <h2 className="text-3xl md:text-5xl font-medium text-gray-800 tracking-tight">
                {profile.heroTitle}
             </h2>

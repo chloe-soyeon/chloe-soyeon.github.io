@@ -129,7 +129,7 @@ export const DATA_KO: ContentData = {
       period: "2025.06",
       role: "Backend Lead",
       description: "영상위원회 데이터 크롤링 및 GPT 기반의 여행 코스 자동 생성/PDF 변환 시스템.",
-      awards: "공공빅데이터 공모전 장려상",
+      awards: "공공빅데이터 공모전\u00A0장려상",
       techStack: {
         backend: ["Spring Boot", "Crawling"],
         frontend: [],
@@ -204,7 +204,7 @@ export const DATA_KO: ContentData = {
     },
     { 
       date: "2025.09", 
-      title: "2025년 전라남도 공공빅데이터 활용 아이디어 공모전 장려상", 
+      title: "2025년 전라남도 공공빅데이터 활용 아이디어 공모전\u00A0장려상",
       issuer: "(재)전남정보문화산업진흥원",
       description: "외부 공공데이터 수집 및 가공, 조회 기능 구현"
     },

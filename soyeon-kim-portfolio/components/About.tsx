@@ -45,8 +45,14 @@ const About: React.FC = () => {
   const { content } = useLanguage();
   const { profile, education, awards, certifications, paper, ui } = content;
 
+  // Prevent orphan single-character at start of a line by inserting a Word Joiner before the last character
+  const noBreakLastChar = (text: string) => {
+    if (!text || text.length < 2) return text;
+    return text.slice(0, -1) + '\u2060' + text.slice(-1);
+  };
+
   return (
-    <section id="about" className="py-24 md:py-36 bg-white">
+    <section id="about" lang="ko" className="py-24 md:py-36 bg-white">
       <div className="max-w-6xl mx-auto px-6 lg:px-8">
         <div className="mb-16">
            <h2 className="text-sm font-bold text-pink-600 tracking-widest uppercase mb-3">{ui.about.label}</h2>
@@ -62,8 +68,8 @@ const About: React.FC = () => {
             <div className="relative z-10 flex flex-col justify-center min-h-[180px] md:min-h-[250px]">
               <h4 className="text-3xl font-bold text-gray-900 mb-6">{ui.about.philosophyTitle}</h4>
               <p
-                className="text-gray-600 text-xl font-medium text-balance text-center md:text-left max-w-3xl"
-                style={{ wordBreak: 'keep-all', overflowWrap: 'break-word', lineHeight: '1.9' }}
+                className="text-gray-600 text-xl font-medium text-center md:text-left max-w-3xl"
+                style={{ wordBreak: 'keep-all', overflowWrap: 'break-word', lineBreak: 'strict', lineHeight: '1.9' }}
               >
                 {profile.summary}
               </p>
@@ -104,7 +110,7 @@ const About: React.FC = () => {
                 {awards.map((award, idx) => (
                   <li key={idx} className="flex flex-col md:flex-row md:justify-between md:items-start border-b border-gray-100 pb-4 last:border-0 last:pb-0 gap-2 md:gap-4">
                     <div className="flex-1">
-                      <span className="font-bold text-gray-800 text-lg leading-snug block mb-1">{award.title}</span>
+                      <span className="font-bold text-gray-800 text-lg leading-snug block mb-1">{noBreakLastChar(award.title)}</span>
                       {award.description && (
                         <p className="text-sm text-gray-500 leading-relaxed">
                           : {award.description}

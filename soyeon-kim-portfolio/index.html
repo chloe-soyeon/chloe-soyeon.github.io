@@ -37,6 +37,12 @@
         border: 1px solid rgba(255, 255, 255, 0.3);
       }
       .text-balance {
+        /* Leave empty by default to avoid affecting CJK languages. */
+      }
+
+      /* Apply balance wrapping only when the page (or an ancestor) is English */
+      html[lang="en"] .text-balance {
+        /* experimental: balance text wrapping for English copy */
         text-wrap: balance;
       }
     </style>
